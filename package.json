@@ -1,0 +1,14 @@
+{
+  "name": "graphbuilder",
+  "version": "1.0.0",
+  "description": "simple graphbuilder tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "demo"
+  ],
+  "author": "NPM Demo",
+  "license": "MIT"
+}
