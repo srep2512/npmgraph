@@ -1,3 +1,3 @@
-exports.printMsg = function(){
-    console.log("Show me my superduper Function")
+exports.printMsg = function(string){
+    return string;
 }
