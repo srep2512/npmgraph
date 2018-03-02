@@ -24,32 +24,26 @@ GraphBuilder.prototype.JsontoGraphSVG = function(string){
 }
 
 GraphBuilder.prototype.drawOnContainer = function(){
-    var example = d3.select("#example"),
-        width = d3.getSize(example.style('width')),
+    var example = d3.select("#element"),
+        width = d3.select('body').node().getBoundingClientRect().width,
         height = Math.min(500, width),
         radius = 20,
         area = Math.PI*radius*radius,
         margin = 2*radius,
-        text = '';  
-        
-    example.select('.paper').remove();
-    var paper = example
-            .append(type)
-            .classed('paper', true)
-            .style('stroke', '#333')
-            .attr('width', width).attr('height', height).canvasResolution(r).canvas(true);
+        text = '';
+   example.select('.paper').remove()
+   var paper = example.append('svg')
+    .classed('paper', true)
+    .style('stroke', '#333')   
 
-        var marks = d3.symbol().type(function (d) {return d3['symbol' + d.type];}).size(function (d) {return area;});
-
-        paper.append('rect')
+   paper.append('rect')
             .attr('x', 0)
             .attr('y', 0)
-            .attr('width', width)
+            .attr('width', 960)
             .attr('height', height)
             .style("stroke-width", 0)
             .style('fill', '#333')
             .style('fill-opacity', 0.1)
-            .on("mousemove.hover", mouseover);
 
 }
 
