@@ -48,7 +48,7 @@ GraphBuilder.prototype.drawOnContainer = function(){
 }
 
 GraphBuilder.prototype.getName = function(){
-    return this.name;
+    return this.container;
 }
 
 module.exports = GraphBuilder;
