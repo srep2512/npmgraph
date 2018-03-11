@@ -5,6 +5,7 @@ var d3 = require('d3')
 class GraphBuilder{
     constructor(container){
         this.container = container
+        this.paper;
     }
 }
 
@@ -37,6 +38,7 @@ GraphBuilder.prototype.drawOnContainer = function(){
     .style('stroke', '#333')
     .attr('width', width).attr('height', height);   
 
+   //Container #auslagern
    paper.append('rect')
             .attr('x', 0)
             .attr('y', 0)
@@ -114,7 +116,19 @@ GraphBuilder.prototype.drawOnContainer = function(){
     }
 }
 
+//define components for BPMN
+//return as
+GraphBuilder.prototype.addExample = function(){
+    return this.container.append()
+}
+
 GraphBuilder.prototype.getName = function(){
+    return this.container;
+}
+
+GraphBuilder.prototype.getVorwärtsDiagram = function(){
+    
+    d3.select(this.container).append("<p>HALLO</p>")
     return this.container;
 }
 
