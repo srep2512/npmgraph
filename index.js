@@ -118,8 +118,15 @@ GraphBuilder.prototype.drawOnContainer = function(){
 
 //define components for BPMN
 //return as
-GraphBuilder.prototype.addExample = function(){
-    return this.container.append()
+GraphBuilder.prototype.addExample = function(svg){
+    //unique Id for each element in the svg diagram
+    var id = (function(){var a = 0; return function(){return "color["+a+++"]"}})();
+    var container = d3.select(this.container)
+    container.append("div")
+    .html(svg)
+    .selectAll("rect")
+    .attr("style","stroke:#33322E")
+    .attr("::fill",id)
 }
 
 GraphBuilder.prototype.getName = function(){
