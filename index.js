@@ -122,11 +122,16 @@ GraphBuilder.prototype.addExample = function(svg){
     //unique Id for each element in the svg diagram
     var id = (function(){var a = 0; return function(){return "color["+a+++"]"}})();
     var container = d3.select(this.container)
-    container.append("div")
+    container
     .html(svg)
     .selectAll("rect")
     .attr("style","stroke:#33322E")
-    .attr("::fill",id)
+    .attr("::fill",id)    
+}
+
+GraphBuilder.prototype.getDiagramString = function(){
+    var res = d3.select(this.container)
+    return res;
 }
 
 GraphBuilder.prototype.getName = function(){
