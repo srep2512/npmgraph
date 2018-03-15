@@ -144,6 +144,41 @@ GraphBuilder.prototype.getVorwärtsDiagram = function(){
     return this.container;
 }
 
+GraphBuilder.prototype.initDia = function(length){
+    var col = []
+    for(var i = 0;i<length;i++){
+      col.push("green")
+    }
+    return col
+}
+
+GraphBuilder.prototype.forw = function(color,actualState){
+    var i = 0
+    var col = []
+    color.forEach(e=>{
+        col.push("green")
+        if(i===actualState){
+            col.push("red")
+        }
+        i++
+    })
+    return col
+}
+
+
+GraphBuilder.prototype.back = function(color,actualState){
+    var i = 0
+    var col = []
+    color.forEach(e=>{
+        col.push("green")
+        if(i===actualState){
+            col[i-1] = "red"
+        }
+        i++
+    })
+    return col
+}
+
 module.exports = GraphBuilder;
 
 
